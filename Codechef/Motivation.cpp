@@ -1,14 +1,27 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-void solve()
+int main()
 {
-  int a,b,c,d;
-  cin >> a >> b >> c >> d;
-  cout << (a<= min(c, b+d) ? "YES\n" : "NO\n");
-}
-
-int main() {
-	
-	return 0;
+    int t;
+    cin >> t;
+    
+    while(t--)
+    {
+        int n,x,max=0; // n = no. of movies and x = space available
+        cin >> n >> x;
+        
+        for(int i=1;i<=n;i++)
+        {
+            long s,r; // s = space required and r = rating
+            cin >> s >> r;
+            if(s<=x && r>max){
+                max = r;
+            }
+        }
+        
+        cout << max << endl;
+        
+    }
+    return 0;
 }
